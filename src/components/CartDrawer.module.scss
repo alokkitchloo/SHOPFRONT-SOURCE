@@ -1,0 +1,220 @@
+@use "../styles/tokens" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 21, 26, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 30;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 400px;
+  max-width: 90vw;
+  background: $color-card;
+  box-shadow: $shadow-drawer;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 31;
+  display: flex;
+  flex-direction: column;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid $color-line;
+}
+
+.heading {
+  font-size: 17px;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  color: $color-ink-soft;
+  @include focus-ring;
+
+  &:hover {
+    color: $color-ink;
+  }
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px;
+  text-align: center;
+  color: $color-ink-soft;
+}
+
+.emptyHint {
+  font-size: 13px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.line {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid $color-line;
+  position: relative;
+}
+
+.thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  background: #fbfbf9;
+  border: 1px solid $color-line;
+  border-radius: $radius-sm;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.lineBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.lineTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lineVariant {
+  margin: 2px 0 8px;
+  font-size: 12px;
+  color: $color-ink-soft;
+}
+
+.lineFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qtyPicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid $color-line;
+  border-radius: $radius-sm;
+
+  button {
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    @include focus-ring;
+
+    &:disabled {
+      color: $color-line;
+    }
+  }
+
+  span {
+    font-size: 12px;
+    min-width: 14px;
+    text-align: center;
+  }
+}
+
+.lineTotal {
+  font-size: 13px;
+}
+
+.remove {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  font-size: 11px;
+  color: $color-ink-soft;
+  text-decoration: underline;
+  @include focus-ring;
+
+  &:hover {
+    color: $color-tag-red;
+  }
+}
+
+.summary {
+  border-top: 1px dashed $color-line;
+  padding: 18px 20px 20px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: $color-ink-soft;
+  margin-bottom: 8px;
+}
+
+.total {
+  font-size: 15px;
+  font-weight: 600;
+  color: $color-ink;
+  padding-top: 10px;
+  border-top: 1px dashed $color-line;
+}
+
+.checkoutBtn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid $color-ink;
+  border-radius: $radius-sm;
+  background: $color-ink;
+  color: $color-paper;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  @include focus-ring;
+
+  &:hover {
+    background: $color-brand;
+    border-color: $color-brand;
+  }
+}

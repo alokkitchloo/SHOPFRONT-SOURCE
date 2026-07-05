@@ -1,0 +1,57 @@
+@use "../styles/tokens" as *;
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mainImage {
+  aspect-ratio: 1 / 1;
+  background: #fbfbf9;
+  border: 1px solid $color-line;
+  border-radius: $radius-md;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+
+  @include mobile {
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  background: #fbfbf9;
+  border: 1px solid $color-line;
+  border-radius: $radius-sm;
+  @include focus-ring;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &.active {
+    border-color: $color-ink;
+    border-width: 2px;
+  }
+}

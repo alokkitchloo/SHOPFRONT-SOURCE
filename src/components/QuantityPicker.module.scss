@@ -1,0 +1,33 @@
+@use "../styles/tokens" as *;
+
+.picker {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $color-line;
+  border-radius: $radius-sm;
+  overflow: hidden;
+
+  button {
+    width: 36px;
+    height: 40px;
+    background: $color-card;
+    border: none;
+    font-size: 16px;
+    color: $color-ink;
+    @include focus-ring;
+
+    &:hover:not(:disabled) {
+      background: $color-paper;
+    }
+    &:disabled {
+      color: $color-line;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.value {
+  width: 36px;
+  text-align: center;
+  font-size: 14px;
+}

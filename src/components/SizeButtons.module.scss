@@ -1,0 +1,49 @@
+@use "../styles/tokens" as *;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sizeBtn {
+  position: relative;
+  min-width: 44px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid $color-line;
+  border-radius: $radius-sm;
+  background: $color-card;
+  font-family: $font-mono;
+  font-size: 13px;
+  color: $color-ink;
+  @include focus-ring;
+
+  &:hover:not(:disabled) {
+    border-color: $color-ink;
+  }
+
+  &.active {
+    border-color: $color-ink;
+    border-width: 2px;
+    background: $color-ink;
+    color: $color-paper;
+  }
+
+  &.low:not(.active) {
+    border-color: $color-tag-amber;
+    color: $color-tag-amber;
+  }
+
+  &.soldOut {
+    color: $color-ink-soft;
+    background: repeating-linear-gradient(
+      -45deg,
+      $color-paper,
+      $color-paper 4px,
+      $color-line 4px,
+      $color-line 5px
+    );
+    cursor: not-allowed;
+  }
+}

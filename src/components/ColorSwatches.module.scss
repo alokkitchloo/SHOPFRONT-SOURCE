@@ -1,0 +1,20 @@
+@use "../styles/tokens" as *;
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 1px $color-line;
+  @include focus-ring;
+
+  &.active {
+    border-color: $color-card;
+    box-shadow: 0 0 0 2px $color-ink;
+  }
+}

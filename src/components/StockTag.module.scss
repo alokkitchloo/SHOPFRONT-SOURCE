@@ -1,0 +1,46 @@
+@use "../styles/tokens" as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  border-radius: $radius-sm;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.in-stock {
+  color: $color-brand-dark;
+  background: rgba(11, 110, 79, 0.08);
+  border-color: rgba(11, 110, 79, 0.2);
+  .dot {
+    background: $color-brand;
+  }
+}
+
+.low-stock {
+  color: $color-tag-amber;
+  background: rgba(185, 121, 31, 0.1);
+  border-color: rgba(185, 121, 31, 0.25);
+  .dot {
+    background: $color-tag-amber;
+  }
+}
+
+.sold-out {
+  color: $color-tag-red;
+  background: rgba(200, 32, 63, 0.08);
+  border-color: rgba(200, 32, 63, 0.2);
+  .dot {
+    background: $color-tag-red;
+  }
+}
