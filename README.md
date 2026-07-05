@@ -3,8 +3,7 @@
 A small storefront built with **React 18 + TypeScript + Vite + Sass modules**, using
 the [Fake Store API](https://fakestoreapi.com) for product data.
 
-**Live URL:** _add your deployed Vercel/Netlify URL here after deploying — see
-"Deploying" below_
+Live URL: https://shopfront-source.vercel.app/
 
 ## Setup
 
